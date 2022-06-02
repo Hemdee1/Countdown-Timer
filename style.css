@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+  font-family: La Belle Aurore;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgb(202, 202, 202), rgb(172, 141, 141));
+}
+.container {
+  background: url(background.jpg);
+  background-size: cover;
+  background-position: center center;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  width: 750px;
+  max-width: 100%;
+  height: 80vh;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+header {
+  min-height: 13vh;
+}
+header h1 {
+  letter-spacing: 5px;
+  font-size: 3em;
+  font-weight: 500;
+  z-index: 1;
+  text-align: center;
+  line-height: 2.5rem;
+}
+.date-cont {
+  display: flex;
+  justify-content: center;
+  transition: 1s;
+  opacity: 0;
+  animation: fadeIn 1s 3s forwards;
+}
+h1.date {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  background: rgb(255, 255, 255, 0.6);
+  font-size: 2.2em;
+}
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  transition: 1s;
+  opacity: 0;
+  animation: fadeIn 1s 5s forwards;
+}
+.countdown-container > div {
+  text-align: center;
+  background: rgb(255, 255, 255, 0.6);
+  padding: 0.3rem 0.6rem;
+  border-radius: 10px;
+}
+.countdown-container > div h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-bottom: 10px;
+  z-index: 1;
+}
+.countdown-container > div span {
+  font-size: 1.5em;
+  z-index: 1;
+}
+.snow {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-1rem);
+  animation: fall 3s linear forwards;
+}
+@keyframes fall {
+  to {
+    transform: translateY(95vh);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 85%;
+    padding: 3rem 1rem;
+  }
+  header h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  h1.date {
+    width: 90%;
+    font-size: 1.6em;
+  }
+  .countdown-container {
+    gap: 10px;
+  }
+  .countdown-container > div h1 {
+    font-size: 1.6em;
+    padding-bottom: 5px;
+  }
+  .countdown-container > div span {
+    font-size: 1.3em;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
